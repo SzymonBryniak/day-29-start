@@ -35,3 +35,4 @@ input_username_email.grid(column=1, row=2, columnspan=2, sticky='w')
 input_password = tkinter.Entry(window, width=21)
 input_password.grid(column=1, row=3, columnspan=2, sticky='w')
 window.mainloop()
+
