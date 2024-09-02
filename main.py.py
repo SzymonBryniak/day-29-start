@@ -21,18 +21,18 @@ label3 = tkinter.Label(text='Password:')
 label3.grid(column=0, row=3)
 
 button1 = tkinter.Button(text='Generate Password')
-button1.grid(column=2, row=3, sticky='w')
+button1.grid(column=1, row=3, columnspan=3, ipadx=11, sticky='e')
 
 button2 = tkinter.Button(text='Add', width=36)
-button2.grid(column=1, row=4, columnspan=3, sticky='w')
+button2.grid(column=1, row=4, columnspan=2, sticky='w')
 
-input_website = tkinter.Entry(window, width=35)
-input_website.grid(column=1, row=1, columnspan=2, sticky='w')
+input_website = tkinter.Entry(window, width=43)
+input_website.grid(column=1, row=1, columnspan=3, sticky='w')
 
-input_username_email = tkinter.Entry(window, width=35)
-input_username_email.grid(column=1, row=2, columnspan=2, sticky='w')
+input_username_email = tkinter.Entry(window, width=43)
+input_username_email.grid(column=1, row=2, columnspan=3, sticky='w')
 
 input_password = tkinter.Entry(window, width=21)
-input_password.grid(column=1, row=3, columnspan=2, sticky='w')
+input_password.grid(column=1, row=3, sticky='w')
 window.mainloop()
 
