@@ -1,6 +1,18 @@
 import tkinter
 from tkinter import *
 
+
+def store_data(web, username, passwd):
+    user_data = {}
+    user_data.update({username: [web, passwd]})
+    print(user_data)
+    return
+
+
+def print_data(test_arg):
+    print('test', test_arg)
+
+
 window = Tk()
 window.title('Password Manager')
 window.config(pady=20, padx=20)
@@ -23,16 +35,23 @@ label3.grid(column=0, row=3)
 button1 = tkinter.Button(text='Generate Password')
 button1.grid(column=1, row=3, columnspan=3, ipadx=11, sticky='e')
 
-button2 = tkinter.Button(text='Add', width=36)
+
+website = tkinter.Entry(window, width=43)
+website.grid(column=1, row=1, columnspan=3, sticky='w')
+website.focus()
+website_get = website.get()
+
+username_email = tkinter.Entry(window, width=43)
+username_email.grid(column=1, row=2, columnspan=3, sticky='w')
+username_email.insert(0, "szymon@gmail.com")
+username_email_get = username_email.get()
+
+password = tkinter.Entry(window, width=21)
+password.grid(column=1, row=3, sticky='w')
+password_get = password.get()
+
+action_with_arg = print_data(1)
+button2 = tkinter.Button(text='Add', width=36, command=action_with_arg)
 button2.grid(column=1, row=4, columnspan=2, sticky='w')
-
-input_website = tkinter.Entry(window, width=43)
-input_website.grid(column=1, row=1, columnspan=3, sticky='w')
-
-input_username_email = tkinter.Entry(window, width=43)
-input_username_email.grid(column=1, row=2, columnspan=3, sticky='w')
-
-input_password = tkinter.Entry(window, width=21)
-input_password.grid(column=1, row=3, sticky='w')
 window.mainloop()
 
