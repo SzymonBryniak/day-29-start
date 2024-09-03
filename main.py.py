@@ -17,6 +17,10 @@ def store_data():
         d_txt.write(' | ')
         d_txt.write(password_get)
         d_txt.write('\n')
+
+    website.delete(0, END)
+    username_email.delete(0, END)
+    password.delete(0, END)
     return
 
 
