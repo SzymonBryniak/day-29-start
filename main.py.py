@@ -2,6 +2,7 @@ import tkinter
 from tkinter import *
 from tkinter import messagebox
 import random
+import pyperclip
 user_data = {}
 
 
@@ -16,8 +17,9 @@ def generate_password():
     nr_symbols = random.randint(2, 4)
     nr_numbers = random.randint(2, 4)
 
-    password_comp = ([random.choice(letters) for char in range(nr_letters)] + [random.choice(numbers) for char in range(nr_symbols)] + [random.choice(symbols) for char in range(nr_numbers)])
-
+    password_comp = "".join(([random.choice(letters) for char in range(nr_letters)] + [random.choice(numbers) for char in range(nr_symbols)] + [random.choice(symbols) for char in range(nr_numbers)]))
+    password.insert(0, password_comp)
+    pyperclip.copy(password_comp)
     print(password_comp)
 
 
@@ -73,7 +75,7 @@ label2.grid(column=0, row=2)
 label3 = tkinter.Label(text='Password:')
 label3.grid(column=0, row=3)
 
-button1 = tkinter.Button(text='Generate Password', command="")
+button1 = tkinter.Button(text='Generate Password', command=generate_password)
 button1.grid(column=1, row=3, columnspan=3, ipadx=11, sticky='e')
 
 
